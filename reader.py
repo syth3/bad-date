@@ -55,6 +55,12 @@ c_lessthan_a = 0
 c_lessthan_m = 0
 
 for key in file_name_dict:
+    if file_name_dict[key].modify_time == None or file_name_dict[key].access_time == None or file_name_dict[key].change_time == None:
+        print("File exluded:", key)
+        print("access_time =", file_name_dict[key].access_time)
+        print("modify_time =", file_name_dict[key].modify_time)
+        print("change_time =", file_name_dict[key].change_time)
+        break
     if file_name_dict[key].modify_time == file_name_dict[key].access_time == file_name_dict[key].change_time:
         all_equal += 1
     if file_name_dict[key].modify_time == file_name_dict[key].access_time:
@@ -77,7 +83,10 @@ for key in file_name_dict:
     if file_name_dict[key].change_time < file_name_dict[key].access_time:
         c_lessthan_a += 1
     if file_name_dict[key].change_time < file_name_dict[key].modify_time:
-        print("Filename:", key)
+        print("File with Change Time < Modify Time:", key)
+        print("access_time =", file_name_dict[key].access_time)
+        print("modify_time =", file_name_dict[key].modify_time)
+        print("change_time =", file_name_dict[key].change_time)
         c_lessthan_m += 1
 
 print("All Timestamps Equal:\t\t\t", all_equal)
