@@ -40,14 +40,67 @@ with open(file_name) as csv_file:
         else:
             file_name_dict[file_name] = MacEntry(access_time, modify_time, change_time)
 
-    
+all_equal = 0
+m_equal_a = 0
+m_equal_c = 0
+a_equal_c = 0
+
+m_lessthan_a = 0
+m_lessthan_c = 0
+
+a_lessthan_m = 0
+a_lessthan_c = 0
+
+c_lessthan_a = 0
+c_lessthan_m = 0
+
 for key in file_name_dict:
-    count = 0
-    print("File =", key)
-    print("==========================================")
-    print("access_time =", file_name_dict[key].access_time)
-    print("modify_time =", file_name_dict[key].modify_time)
-    print("change_time =", file_name_dict[key].change_time)
-    print("==========================================")
-    print()
+    if file_name_dict[key].modify_time == file_name_dict[key].access_time == file_name_dict[key].change_time:
+        all_equal += 1
+    if file_name_dict[key].modify_time == file_name_dict[key].access_time:
+        m_equal_a += 1
+    if file_name_dict[key].modify_time == file_name_dict[key].change_time:
+        m_equal_c += 1
+    if file_name_dict[key].access_time == file_name_dict[key].change_time:
+        a_equal_c += 1
+
+    if file_name_dict[key].modify_time < file_name_dict[key].access_time:
+        m_lessthan_a += 1
+    if file_name_dict[key].modify_time < file_name_dict[key].change_time:
+        m_lessthan_c += 1
+
+    if file_name_dict[key].access_time < file_name_dict[key].modify_time:
+        a_lessthan_m += 1
+    if file_name_dict[key].access_time < file_name_dict[key].change_time:
+        a_lessthan_c += 1
+    
+    if file_name_dict[key].change_time < file_name_dict[key].access_time:
+        c_lessthan_a += 1
+    if file_name_dict[key].change_time < file_name_dict[key].modify_time:
+        print("Filename:", key)
+        c_lessthan_m += 1
+
+print("All Timestamps Equal:\t\t\t", all_equal)
+print("Modify Timestamp = Access Timestamp:\t", m_equal_a)
+print("Modify Timestamp = Change Timestamp:\t", m_equal_c)
+print("Access Timestamp = Change Timestamp:\t", a_equal_c)
+
+print("Modify Timestamp < Access Timestamp:\t", m_lessthan_a)
+print("Modify Timestamp < Change Timestamp:\t", m_lessthan_c)
+
+print("Access Timestamp < Modify Timestamp:\t", a_lessthan_m)
+print("Access Timestamp < Change Timestamp:\t", a_lessthan_c)
+
+print("Change Timestamp < Access Timestamp:\t", c_lessthan_a)
+print("Change Timestamp < Modify Timestamp:\t", c_lessthan_m)
+
+# for key in file_name_dict:
+#     count = 0
+#     print("File =", key)
+#     print("==========================================")
+#     print("access_time =", file_name_dict[key].access_time)
+#     print("modify_time =", file_name_dict[key].modify_time)
+#     print("change_time =", file_name_dict[key].change_time)
+#     print("==========================================")
+#     print()
   
