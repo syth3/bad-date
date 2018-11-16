@@ -58,12 +58,17 @@ with open(file_name) as csv_file:
 
 # Loop through all entries in dictionary to flag which file timestamps seem wrong
 # Timestamps that seem wrong are ones where the modify time is more recent than the change time
+count = 0
 for key in file_name_dict:
     if file_name_dict[key].modify_time == None or file_name_dict[key].access_time == None or file_name_dict[key].change_time == None:
         print("File exluded due to inconclusive timestamps:", key)
         break
     if file_name_dict[key].change_time < file_name_dict[key].modify_time:
+        count += 1
         print("THIS FILE MAY HAVE BEEN TIMESTOMPED:", key)
         print("access_time =", file_name_dict[key].access_time)
         print("modify_time =", file_name_dict[key].modify_time)
         print("change_time =", file_name_dict[key].change_time)
+
+if count == 0:
+    "No files have been detected of timestomps"
