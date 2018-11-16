@@ -41,40 +41,4 @@ for key in file_name_dict:
             print()
     print("==========================================")
     print()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # for row in csv_reader:
-    #     if line_count == 0:
-    #         print(f'Column names are {", ".join(row)}')
-    #         line_count += 1
-    #     else:
-    #         print("Date:", row["Date"])
-    #         print("Size:", row["Size"])
-    #         print("Type:", row[2])
-    #         print("Mode:", row[3])
-    #         print("UID:", row[4])
-    #         print("GID:", row[5])
-    #         print("Meta:", row[6])
-    #         print("File Name:", row[7])
-    #         line_count += 1
-    #     print()
-    # print(f'Processed {line_count} lines.')
+  
