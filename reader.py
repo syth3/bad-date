@@ -70,5 +70,8 @@ for key in file_name_dict:
         print("modify_time =", file_name_dict[key].modify_time)
         print("change_time =", file_name_dict[key].change_time)
 
+print()
 if count == 0:
-    "No files have been detected of timestomps"
+    print("No files have been flagged for timestomping")
+
+print("Number of files found:", count)
