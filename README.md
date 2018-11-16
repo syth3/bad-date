@@ -1,6 +1,9 @@
 # timestomp-detector
 This tool detects timestomping by analyzing the MAC timestamps.
 
+## Authors
+Scott Brink and Jake Brown
+
 ## Dependencies
 `apt-get install sleuthkit`
 
