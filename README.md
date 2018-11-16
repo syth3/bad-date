@@ -3,6 +3,7 @@ This tool detects timestomping by analyzing the MAC timestamps.
 
 ## Authors
 Written for CSEC464: Computer System Forensics
+
 Written by Scott Brink and Jake Brown
 
 ## Dependencies
