@@ -74,4 +74,4 @@ print()
 if count == 0:
     print("No files have been flagged for timestomping")
 
-print("Number of files found:", count)
+print("Number of timestamp files found:", count)
