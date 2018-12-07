@@ -1,4 +1,4 @@
-# timestomp-detector
+# bad-date
 - This tool detects timestomping by analyzing the MAC timestamps.
 
 ## Authors
